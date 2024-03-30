@@ -1,4 +1,4 @@
-import Hero from "../Hero/Hero"
+import Hero from "../Hero/Hero.js"
 import React from "react"
 import {fetchFilters,fetchSongs} from "../../components/Api/Api"
 //import {useOutletContext} from "react-router-dom"
