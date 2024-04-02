@@ -1,21 +1,13 @@
-import React from 'react'
-import Navbar from './Components/Navbar/Navbar.jsx';
-import Hero from './Components/Hero/Hero.jsx';
-// import styles from './App.module.css'
-
+import Navbar from "./components/Navbar/Navbar";
+import HeroSection from "./components/HeroSection/HeroSection";
 
 function App() {
-
- 
-
-   
   return (
     <>
-      <Navbar />
-      <Hero />
-    
+      <Navbar/>
+      <HeroSection/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

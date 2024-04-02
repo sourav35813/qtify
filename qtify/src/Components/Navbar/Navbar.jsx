@@ -1,18 +1,20 @@
 import React from "react";
-import Button from "../Button/Button";
-import Search from "../Search/Search";
-import styles from './Navbar.module.css'
-// import LogoImage from "../../assets/Logo.png"
-// import path from "../../assets/Logo.png"
+import styles from "./Navbar.module.css";
+import Logo from "../Logo/Logo";
+import SearchBox from "../Searchbox/SearchBox";
+import FeedbackButton from "../FeedbackButton/FeedbackButton";
 
-export default function Navbar(){
+function Navbar(){
+    const placeholder = "Search a album of your choice"
     return(
-        <>
-            <nav className={styles.navbar}>
-                <div className={styles.logoDiv}><img  src="Logo.png" alt="logo" width={67}/></div>
-                 <Search search={"Search a song of your choice"}/>
-                <Button children="Give Feedback"/>
-            </nav>
-        </>
+        <nav className={styles.navbar}>
+            <a href="/">
+                <Logo/>
+            </a>
+            <SearchBox placeholder={placeholder}/>
+            <FeedbackButton/>
+        </nav>
     )
 }
+
+export default Navbar;
