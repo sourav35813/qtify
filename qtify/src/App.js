@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar.jsx";
 import { Outlet } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { fetchTopAlbums, fetchSongs, fetchNewAlbums } from "../src/api/api";
