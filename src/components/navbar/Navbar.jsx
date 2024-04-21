@@ -11,7 +11,8 @@ const Navbar = () => {
     return (
         <>
             <div className={styles.container}>
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                {/* <Stack> */}
+                {/* direction="row" justifyContent="space-between" alignItems="center" */}
                     <Logo />
                     <Searchbar />
                     <Button
@@ -19,7 +20,7 @@ const Navbar = () => {
                         variant="contained" 
                         sx={{ color: theme.palette.primary[400], mr: '32px', borderRadius: '8px' }}>
                         Give Feedback</Button>
-                </Stack>
+                {/* </Stack> */}
             </div>
         </>
     )
