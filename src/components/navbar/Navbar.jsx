@@ -17,7 +17,7 @@ const Navbar = () => {
                     <Button
                         color="customBlack"
                         variant="contained" 
-                        sx={{fontfamily: "Jersey 10", color: theme.palette.primary[400], mr: '32px', borderRadius: '8px' }}>
+                        sx={{ color: theme.palette.primary[400], mr: '32px', borderRadius: '8px' }}>
                         Give Feedback</Button>
                 </Stack>
             </div>
