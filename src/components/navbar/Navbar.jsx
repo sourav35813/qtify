@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
         <>
             <div className={styles.container}>
-                <Stack direction="row" justifyContent="space-around" alignItems="center">
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
                     <Logo />
                     <Searchbar />
                     <Button
