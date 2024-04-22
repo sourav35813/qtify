@@ -2,7 +2,7 @@
     background-color: #34C94B;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 74px;
 }
 
@@ -13,3 +13,8 @@
     margin-top: 12px;
     margin-bottom: 12px;   
 }
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }

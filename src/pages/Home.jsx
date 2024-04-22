@@ -1,12 +1,12 @@
 import Navbar from "../components/navbar/Navbar";
 import { Hero } from "../components/hero/Hero";
-import { AlbumCard } from "../components/album/AlbumCard";
+import {Carousel} from "../components/album/Carousel";
  
 const Home = () => {
     return <>
     <Navbar />
     <Hero />
-    <AlbumCard />
+    <Carousel />
     </>
 }
 
