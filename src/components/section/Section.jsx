@@ -3,6 +3,7 @@ import { useTheme } from '@emotion/react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { SwiperComp } from '../swiper/SwiperComp';
+import { SongCategory } from './SongCategory';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,6 +27,7 @@ const Section = () => {
           Show all
         </Typography>
       </Stack>
+      <SongCategory />
       <SwiperComp />
     </Box>
   );
