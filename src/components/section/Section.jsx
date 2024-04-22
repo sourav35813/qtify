@@ -1,16 +1,13 @@
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { AlbumCard } from '../album/AlbumCard';
 import { Box } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { SwiperComp } from '../swiper/SwiperComp';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { ClassNames } from '@emotion/react';
 
 const Section = () => {
   const theme = useTheme();
@@ -29,29 +26,7 @@ const Section = () => {
           Show all
         </Typography>
       </Stack>
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={0}
-        slidesPerView={7}
-        navigation
-        // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-        style={swiperStyle}
-      >
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-        <SwiperSlide><AlbumCard /></SwiperSlide>
-      </Swiper>
+      <SwiperComp />
     </Box>
   );
 };
