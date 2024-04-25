@@ -7,7 +7,7 @@ const AlbumGrid = ({ data }) => {
         <Grid container spacing={1} color="white" sx={{px:'20px', py:'15px'}}>
             {data?.map((album) => (
                 <Grid key={album.id} item xs={12} sm={6} md={4} lg={3} xl={12/7}>
-                    <AlbumCard imageSrc={album.image} name={album.title} followsCount={album.follows} />
+                    <AlbumCard data={album} />
                 </Grid>
             ))}
         </Grid>

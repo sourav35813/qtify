@@ -2,13 +2,19 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AlbumCard } from '../album/AlbumCard';
 import { useTheme } from '@emotion/react';
+import { useContext } from 'react';
+import { GenreContext } from '../contexts/ContextForGenre';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const SwiperComp = ({ data }) => {
+const SwiperComp = ({ data, isSongsSection }) => {
+
+  //for context
+  const { selectedGenre, setSelectedGenre } = useContext(GenreContext);
+
   const theme = useTheme();
   const swiperStyle = {
     paddingLeft: '20px',
@@ -29,11 +35,30 @@ const SwiperComp = ({ data }) => {
       style={swiperStyle}
     >
       {
-        data?.map((album) =>
-          <SwiperSlide key={album.id}>
-            <AlbumCard imageSrc={album.image} name={album.title} followsCount={album.follows} />
-          </SwiperSlide>
-        )
+        isSongsSection ?
+          (data?.map((album) => {
+            if (selectedGenre === "all") {
+              return (
+                <SwiperSlide key={album.id}>
+                  <AlbumCard data={album} isSongsSection={true} />
+                </SwiperSlide>
+              )
+            } else if (selectedGenre === album.genre.key) {
+              return (
+                <SwiperSlide key={album.id}>
+                  <AlbumCard data={album} isSongsSection={true} />
+                </SwiperSlide>
+              )
+            }
+          }
+          )) :
+          (
+            data?.map((album) =>
+              <SwiperSlide key={album.id}>
+                <AlbumCard data={album} />
+              </SwiperSlide>
+            )
+          )
       }
     </Swiper>
   );

@@ -1,9 +1,16 @@
 import * as React from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { BorderAllRounded, BorderRight, Height } from '@mui/icons-material';
+import axios from 'axios';
+// import TabContext from '@mui/lab/TabContext';
+// import TabList from '@mui/lab/TabList';
+// import TabPanel from '@mui/lab/TabPanel';
+
+import { GenreContext } from '../contexts/ContextForGenre';
 
 
 const StyledTabs = styled((props) => (
@@ -42,11 +49,34 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
 );
 
 const SongCategory = () => {
-    const [value, setValue] = React.useState(0);
+    const [genres, setGenres] = useState();
 
+    //for context
+    const {selectedGenre, setSelectedGenre} = useContext(GenreContext);
+
+    useEffect(() => {
+        const getGenre = async () => {
+            const url = "https://qtify-backend-labs.crio.do/genres";
+            try {
+                const res = await axios.get(url);
+                // console.log("res: "+ JSON.stringify(res.data.data));
+                setGenres(res.data.data);
+            } catch (e) {
+                console.log(e.response);
+            }
+        }
+        getGenre();
+    }, [])
+
+    const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const handleTabClick = (key) => {
+        console.log("key: "+ key);
+        setSelectedGenre(key);
+    }
 
     return (
         <StyledTabs
@@ -55,11 +85,12 @@ const SongCategory = () => {
             //   aria-label="styled tabs example"
             sx={{ pb: '10px' }}
         >
-            <StyledTab label="All" />
-            <StyledTab label="Rock" />
-            <StyledTab label="Pop" />
-            <StyledTab label="Jazz" />
-            <StyledTab label="Blues" />
+            <StyledTab label="All" key={"all"} onClick={() => handleTabClick("all")} />
+            {
+                genres?.map((genre) =>
+                    <StyledTab label={genre.label} key={genre.key} value={genre.key} onClick={() => handleTabClick(genre.key)} />
+                )
+            }
         </StyledTabs>
 
     );

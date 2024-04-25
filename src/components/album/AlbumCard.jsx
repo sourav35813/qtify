@@ -3,9 +3,14 @@ import { Chip } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import Typography from "@mui/material/Typography";
 
-const AlbumCard = ({ imageSrc, name, followsCount }) => {
+const AlbumCard = ({ data, isSongsSection=false }) => {
     const theme = useTheme();
-    const fcount = followsCount + " Follows";
+    let count;
+    if(!isSongsSection){
+        count = data.follows + " Follows"
+    }else{
+        count = data.likes + " Likes"
+    }
     return <>
         <Box
             sx={{
@@ -20,7 +25,7 @@ const AlbumCard = ({ imageSrc, name, followsCount }) => {
             }}
         >
             <img
-                src={imageSrc}
+                src={data.image}
                 alt="Your Image"
                 style={{
                     width: '100%',
@@ -29,11 +34,11 @@ const AlbumCard = ({ imageSrc, name, followsCount }) => {
                 }}
             />
             <Box display="flex" alignItems="center" sx={{ backgroundColor: "white", height: '16%' }}>
-                <Chip size="small" label={fcount} sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
+                <Chip size="small" label={count} sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
             </Box>
         </Box>
         <Typography variant="body2" sx={{ pt: '5px', pb:'10px' }}>
-            {name}
+            {data.title}
         </Typography>
     </>
 }
