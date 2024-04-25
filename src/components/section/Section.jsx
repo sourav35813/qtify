@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import { SwiperComp } from '../swiper/SwiperComp';
 import { SongCategory } from './SongCategory';
 import { AlbumGrid } from '../albumgrid/AlbumGrid';
+import { useState } from 'react';
+import { Button } from '@mui/material';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,6 +14,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const Section = ({ sectionName, data, isSongsSection = false }) => {
+  const [showAll, setShowAll] = useState(false);
+  const handleClick = () => {
+    if(showAll === true){
+      setShowAll(false);
+    }else{
+      setShowAll(true);
+    }
+  }
   const theme = useTheme();
   const swiperStyle = {
     paddingLeft: '20px',
@@ -19,24 +29,26 @@ const Section = ({ sectionName, data, isSongsSection = false }) => {
     color: "white"
   };
   return (
-    <Box sx={{ backgroundColor: theme.palette.customBlack.main, px: '30px', py: '5px', pb: '20px', pt:'15px' }}>
+    <Box sx={{ backgroundColor: theme.palette.customBlack.main, px: '30px', py: '5px', pb: '20px', pt: '15px' }}>
       <Stack direction="row" justifyContent="space-between">
         <Typography color="white" variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
           {sectionName}
         </Typography>
         {
           !isSongsSection &&
-          <Typography color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
-            Collapse
-            {/* Show all */}
-          </Typography>
+            <Typography onClick={handleClick} color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
+              {
+                showAll ? "Collapse" : "Show all"
+              }
+            </Typography>
         }
       </Stack>
       {
         isSongsSection && <SongCategory />
       }
-      {/* <SwiperComp data={data}/> */}
-      <AlbumGrid data={data}/>
+      {
+        showAll ? <AlbumGrid data={data} /> : <SwiperComp data={data} />
+      }
     </Box>
   );
 };
