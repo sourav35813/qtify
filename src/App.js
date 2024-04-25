@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from "./pages/Home"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
 
 // Define custom theme
 const theme = createTheme({
@@ -17,6 +18,9 @@ const theme = createTheme({
       200: '#C1ECC2',
       100: '#C1ECC2',
       50: '#E6F7E5'
+    },
+    secondary:{
+      main:'#FFFFFF',
     },
     customBlack: {
       main: '#121212',

@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const Section = () => {
+const Section = ({ isSongsSection = false }) => {
   const theme = useTheme();
   const swiperStyle = {
     paddingLeft: '20px',
@@ -18,16 +18,21 @@ const Section = () => {
     color: "white"
   };
   return (
-    <Box sx={{ backgroundColor: theme.palette.customBlack.main, px: '30px', py: '5px', pb:'20px' }}>
+    <Box sx={{ backgroundColor: theme.palette.customBlack.main, px: '30px', py: '5px', pb: '20px', pt:'15px' }}>
       <Stack direction="row" justifyContent="space-between">
-        <Typography color="white" variant="h6" sx={{ fontWeight: 600, pb: '20px' }}>
+        <Typography color="white" variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
           Top Albums
         </Typography>
-        <Typography color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '20px' }}>
-          Show all
-        </Typography>
+        {
+          !isSongsSection &&
+          <Typography color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
+            Show all
+          </Typography>
+        }
       </Stack>
-      <SongCategory />
+      {
+        isSongsSection && <SongCategory />
+      }
       <SwiperComp />
     </Box>
   );

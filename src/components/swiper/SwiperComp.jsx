@@ -13,7 +13,8 @@ const SwiperComp = () => {
   const swiperStyle = {
     paddingLeft: '20px',
     paddingRight: '20px',
-    color: "white"
+    color: "white",
+    paddingTop:"15px"
   };
   return (
       <Swiper
