@@ -4,13 +4,14 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { SwiperComp } from '../swiper/SwiperComp';
 import { SongCategory } from './SongCategory';
+import { AlbumGrid } from '../albumgrid/AlbumGrid';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const Section = ({ isSongsSection = false }) => {
+const Section = ({ sectionName, data, isSongsSection = false }) => {
   const theme = useTheme();
   const swiperStyle = {
     paddingLeft: '20px',
@@ -21,19 +22,21 @@ const Section = ({ isSongsSection = false }) => {
     <Box sx={{ backgroundColor: theme.palette.customBlack.main, px: '30px', py: '5px', pb: '20px', pt:'15px' }}>
       <Stack direction="row" justifyContent="space-between">
         <Typography color="white" variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
-          Top Albums
+          {sectionName}
         </Typography>
         {
           !isSongsSection &&
           <Typography color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
-            Show all
+            Collapse
+            {/* Show all */}
           </Typography>
         }
       </Stack>
       {
         isSongsSection && <SongCategory />
       }
-      <SwiperComp />
+      {/* <SwiperComp data={data}/> */}
+      <AlbumGrid data={data}/>
     </Box>
   );
 };

@@ -1,4 +1,3 @@
-import TestImg from "../../assets/test-img.jpeg";
 import { Box } from "@mui/material";
 import { Chip } from "@mui/material";
 import { useTheme } from "@emotion/react";
@@ -6,6 +5,7 @@ import Typography from "@mui/material/Typography";
 
 const AlbumCard = ({ imageSrc, name, followsCount }) => {
     const theme = useTheme();
+    const fcount = followsCount + " Follows";
     return <>
         <Box
             sx={{
@@ -20,7 +20,7 @@ const AlbumCard = ({ imageSrc, name, followsCount }) => {
             }}
         >
             <img
-                src={TestImg}
+                src={imageSrc}
                 alt="Your Image"
                 style={{
                     width: '100%',
@@ -29,11 +29,11 @@ const AlbumCard = ({ imageSrc, name, followsCount }) => {
                 }}
             />
             <Box display="flex" alignItems="center" sx={{ backgroundColor: "white", height: '16%' }}>
-                <Chip size="small" label="100 Follows" sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
+                <Chip size="small" label={fcount} sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
             </Box>
         </Box>
         <Typography variant="body2" sx={{ pt: '5px', pb:'10px' }}>
-            New Bollywood
+            {name}
         </Typography>
     </>
 }

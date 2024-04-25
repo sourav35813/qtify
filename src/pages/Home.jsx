@@ -3,18 +3,39 @@ import { Hero } from "../components/hero/Hero";
 import { Section } from "../components/section/Section";
 import { useTheme } from "@emotion/react";
 import { FAQ } from "../components/faq/FAQ";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
+    const [tAlbums, setTAlbums] = useState();
+    useEffect(() => {
+        const getTopAlbumData = async () => {
+            try {
+                const tAlbumURL = "https://qtify-backend-labs.crio.do/albums/top"
+                const res = await axios.get(tAlbumURL);
+                // console.log("res:" + JSON.stringify(res.data));
+                setTAlbums(res.data);
+            } catch (e) {
+                console.log(e.response);
+            }
+        }
+        getTopAlbumData();
+    }, [])
     const theme = useTheme();
     return <>
         <Navbar />
         <Hero />
-        <Section />
-        <Section />
-        <div style={{backgroundColor:theme.palette.primary[400], height:'1px'}}><br/></div>
-        <Section isSongsSection={true} />
-        <div style={{backgroundColor:theme.palette.primary[400], height:'1px'}}><br/></div>
-        <FAQ />
+        {/* top album */}
+        <Section sectionName="Top Albums" data={tAlbums} />
+
+        {/* new album */}
+        {/* <Section sectionName="New Albums" data={tAlbums} /> */}
+
+        {/* songs */}
+        {/* <div style={{ backgroundColor: theme.palette.primary[400], height: '1px' }}><br /></div>
+        <Section sectionName="Songs" data={tAlbums} isSongsSection={true} />
+        <div style={{ backgroundColor: theme.palette.primary[400], height: '1px' }}><br /></div>
+        <FAQ /> */}
     </>
 }
 
