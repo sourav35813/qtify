@@ -1,13 +1,13 @@
 import Logo from '../Logo/Logo';
-// // import Search from '../Search/Search';
-import './navbar.modules.css';
+import Search from '../Search/Search.Jsx';
+import styles from './navbar.module.css';
 
 function Navbar({ searchData }) {
     return (
-        <nav>
-        {/* // <nav className={styles.navbar}> */}
+        <nav className={styles.navbar}>
         {/* <Link to='/'> */}
             <Logo />
+            <Search />
         {/* </Link> */}
         </nav>
     )

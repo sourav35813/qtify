@@ -24,7 +24,7 @@
 // export default App;
 
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar.Jsx";
 // import './App.css';
 
 export default function App() {

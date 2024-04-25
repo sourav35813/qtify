@@ -4,7 +4,7 @@ import LogoImage from '../../assets/Logo.png';
 export default function Logo() {
     return (
         <div id="logodiv">
-    <img src={LogoImage} alt="logo" width={47} />
-    </div>
+    <img src={LogoImage} alt="logo" width={67} />
+     </div>
 )
 }
