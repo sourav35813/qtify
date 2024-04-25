@@ -8,6 +8,7 @@ import axios from "axios";
 
 const Home = () => {
     const [tAlbums, setTAlbums] = useState();
+    const [nAlbums, setNAlbums] = useState();
     useEffect(() => {
         const getTopAlbumData = async () => {
             try {
@@ -19,7 +20,18 @@ const Home = () => {
                 console.log(e.response);
             }
         }
+        const getNewAlbumData = async () => {
+            try {
+                const nAlbumURL = "https://qtify-backend-labs.crio.do/albums/new"
+                const res = await axios.get(nAlbumURL);
+                // console.log("res:" + JSON.stringify(res.data));
+                setNAlbums(res.data);
+            } catch (e) {
+                console.log(e.response);
+            }
+        }
         getTopAlbumData();
+        getNewAlbumData();
     }, [])
     const theme = useTheme();
     return <>
@@ -29,7 +41,7 @@ const Home = () => {
         <Section sectionName="Top Albums" data={tAlbums} />
 
         {/* new album */}
-        {/* <Section sectionName="New Albums" data={tAlbums} /> */}
+        <Section sectionName="New Albums" data={nAlbums} />
 
         {/* songs */}
         {/* <div style={{ backgroundColor: theme.palette.primary[400], height: '1px' }}><br /></div>
