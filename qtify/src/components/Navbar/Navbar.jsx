@@ -1,6 +1,6 @@
 import Logo from '../Logo/Logo';
-import Search from '../Search/Search';
-import styles from './Navbar.module.css';
+import Search from '../Search/Search.Jsx';
+import styles from '../Navbar/Navbar.module.css';
 
 function Navbar({ searchData }) {
     return (
