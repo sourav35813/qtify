@@ -1,6 +1,6 @@
 import Logo from '../Logo/Logo';
 import Search from '../Search/Search.jsx';
-import styles from './Navbar/Navbar.module.css';
+import styles from './Navbar.module.css';
 
 function Navbar({ searchData }) {
     return (
@@ -20,18 +20,18 @@ export default Navbar;
 // import React from "react";
 // // import Button from "../Button/Button";
 // // import Search from "../Search/Search";
-// import styles from './navbar.modules.css'
-// // import LogoImage from "../../assests/logo.png"
+// import styles from './Navbar.modules.css'
+// // import LogoImage from "../logo.png"
 
 // export default function Navbar(){
 //     return(
 //         <div>
 //             <nav className={styles.navbar}>
-//                 <divs className={styles.logoDiv} >
+//                 <div className={styles.logoDiv} >
 //                     {/* <img src={LogoImage} alt="logo" width={67}/> */}
 //                     <Logo />
 //                     </div>
-//                 {/* <Search search={"Search a song of your choice"}/> */}
+//                 <Search search={"Search a song of your choice"}/>
 //                 {/* <Button children="Give Feedback"/> */}
 //             </nav>
 //         </div>
