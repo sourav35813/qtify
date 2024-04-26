@@ -1,0 +1,36 @@
+.searchbox{
+    width: 568px;
+    height: 52px;
+}
+
+.search{
+    font-family: "Lato";
+    width: 90%;
+    height: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+    border:1px black solid;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.searchbutton{
+    font-family: "Poppins";
+    background-color: #FFFFFF;
+    color: #121212;
+    width: 10%;
+    height: 100%;
+    border:1px black solid;
+    border-radius: 0px 8px 8px 0px;
+    -webkit-border-radius: 0px 8px 8px 0px;
+    -moz-border-radius: 0px 8px 8px 0px;
+    -ms-border-radius: 0px 8px 8px 0px;
+    -o-border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+}
+
+
+
+.searchLogo{
+    width: 18px;
+    height: 15px;
+}

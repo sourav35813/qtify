@@ -1,35 +1,17 @@
-import React from "react";
-import { Box, TextField } from "@mui/material";
-// import LogoImage from '../../assets/Logo.png';
+import './Search.module.css';
+import searchLogo from '../../assets/Search-icon.svg';
 
-export default function Search() {
-    return (
-        <>
-          <Box mb={4}>
-        <TextField
-          size="medium"
-          type="text"
-          name="search-box"
-          placeholder="Search for music"
-        />
-        </Box>
-     </>
-)
+export default function Searchbox() {
+  return (
+    <>
+        <div className='searchbox'>
+            <input type='text' className='search' placeholder='Search a album of your choice' />
+            <button  className='searchbutton'>
+                <img src={searchLogo} alt='logo' className='searchLogo' />
+            </button>
+        </div>
+    </>
+  );
 }
 
-// import React from "react";
-// import {ReactComponent as SearchIcon} from "../../assests/search-icon.svg"
-// import styles from "./Search.module.css"
 
-// const Search = ({ search }) => {
-//     return (
-//       <form className={styles.wrapper}>
-//         <input className={styles.search} placeholder={search}></input>
-//         <button className={styles.searchButton} type="submit">
-//           <SearchIcon />
-//         </button>
-//       </form>
-//     );
-//   };
-  
-//   export default Search;

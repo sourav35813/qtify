@@ -1,17 +1,10 @@
-.navbar {
-    background-color: brown;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 74px;
-    padding: 32px;
-  }
+.navbar{
+  height: 74px;
+  background-color: #34C94B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 32px 0px 32px;
+}
 
-  .logoDiv{
-    display: flex;
-    margin: 14px;
-    /* padding: 14px; */
-  }
 
-  
