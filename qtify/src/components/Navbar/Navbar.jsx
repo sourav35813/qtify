@@ -1,5 +1,5 @@
 import Logo from '../Logo/Logo';
-import Search from '../Search/Search.Jsx';
+import Search from '../Search/Search.jsx';
 import styles from '../Navbar/Navbar.module.css';
 
 function Navbar({ searchData }) {
