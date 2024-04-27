@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { SwiperComp } from '../swiper/SwiperComp';
 import { SongCategory } from './SongCategory';
-import { AlbumGrid } from '../albumgrid/AlbumGrid';
+import { CustomGrid } from '../grid/CustomGrid';
 import { useState, createContext } from 'react';
 import { GenreContext } from '../contexts/ContextForGenre';
 
@@ -52,9 +52,9 @@ const Section = ({ sectionName, data, isSongsSection = false }) => {
         }
         {
           isSongsSection ? (
-            showAll ? <AlbumGrid data={data} /> : <SwiperComp data={data} isSongsSection={true} />
+            showAll ? <CustomGrid data={data} /> : <SwiperComp data={data} isSongsSection={true} />
           ) : (
-            showAll ? <AlbumGrid data={data} /> : <SwiperComp data={data} />
+            showAll ? <CustomGrid data={data} /> : <SwiperComp data={data} />
           )
         }
       </Box>

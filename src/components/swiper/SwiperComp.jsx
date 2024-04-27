@@ -1,6 +1,6 @@
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { AlbumCard } from '../album/AlbumCard';
+import { CustomCard } from '../card/CustomCard';
 import { useTheme } from '@emotion/react';
 import { useContext } from 'react';
 import { GenreContext } from '../contexts/ContextForGenre';
@@ -45,13 +45,13 @@ const SwiperComp = ({ data, isSongsSection }) => {
             if (selectedGenre === "all") {
               return (
                 <SwiperSlide key={album.id} style={swiperSlideStyle}>
-                  <AlbumCard data={album} isSongsSection={true} />
+                  <CustomCard data={album} isSongsSection={true} />
                 </SwiperSlide>
               )
             } else if (selectedGenre === album.genre.key) {
               return (
                 <SwiperSlide key={album.id} style={swiperSlideStyle}>
-                  <AlbumCard data={album} isSongsSection={true} />
+                  <CustomCard data={album} isSongsSection={true} />
                 </SwiperSlide>
               )
             }
@@ -60,7 +60,7 @@ const SwiperComp = ({ data, isSongsSection }) => {
           (
             data?.map((album) =>
               <SwiperSlide key={album.id} style={swiperSlideStyle}>
-                <AlbumCard data={album} />
+                <CustomCard data={album} />
               </SwiperSlide>
             )
           )

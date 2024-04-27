@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import { DateRange } from "@mui/icons-material";
 
-const AlbumCard = ({ data, isSongsSection = false }) => {
+export const CustomCard = ({ data, isSongsSection = false }) => {
     const theme = useTheme();
     let count;
     let title;
@@ -92,9 +92,6 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
         }
     </>
 }
-
-
-export { AlbumCard };
 
 
 
