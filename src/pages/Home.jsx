@@ -5,6 +5,8 @@ import { useTheme } from "@emotion/react";
 import { FAQ } from "../components/faq/FAQ";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Searchbar } from "../components/navbar/Searchbar";
+import { Hidden } from '@mui/material';
 
 const Home = () => {
     const [tAlbums, setTAlbums] = useState();
@@ -47,6 +49,9 @@ const Home = () => {
     const theme = useTheme();
     return <>
         <Navbar />
+        <Hidden mdUp>
+            <Searchbar />
+        </Hidden>
         <Hero />
         {/* top album */}
         <Section sectionName="Top Albums" data={tAlbums} />
