@@ -2,6 +2,7 @@ import Navbar from "../components/navbar/Navbar";
 import { Hero } from "../components/hero/Hero";
 import { Section } from "../components/section/Section";
 import { useTheme } from "@emotion/react";
+import Box from "@mui/material/Box";
 import { FAQ } from "../components/faq/FAQ";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -51,14 +52,16 @@ const Home = () => {
     return <>
         <Navbar />
         <Hidden mdUp>
-            <Searchbar />
+            <Box sx={{ width:'100vw'}}>
+                <Searchbar />
+            </Box>
         </Hidden>
         <Hero />
-        {/* <Section sectionName="Top Albums" data={tAlbums} />
+        <Section sectionName="Top Albums" data={tAlbums} />
         <Section sectionName="New Albums" data={nAlbums} />
         <GreenLine/>
         <Section sectionName="Songs" data={songs} isSongsSection={true} />
-        <GreenLine/> */}
+        <GreenLine/>
         {/* <FAQ /> */}
     </>
 }

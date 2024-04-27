@@ -27,7 +27,7 @@ const Navbar = () => {
                             <RateReviewOutlinedIcon sx={{ height: '20px', padding: '0px' }} />
                         </Button>
                 </Hidden>
-                <Hidden smDown>
+                <Hidden mdDown>
                     <Logo />
                     <Searchbar />
                     <Button
