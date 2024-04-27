@@ -62,7 +62,7 @@ const Home = () => {
         <GreenLine/>
         <Section sectionName="Songs" data={songs} isSongsSection={true} />
         <GreenLine/>
-        {/* <FAQ /> */}
+        <FAQ />
     </>
 }
 
