@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Searchbar } from "../components/navbar/Searchbar";
 import { Hidden } from '@mui/material';
+import { GreenLine } from "../components/greenline/GreenLine";
 
 const Home = () => {
     const [tAlbums, setTAlbums] = useState();
@@ -53,16 +54,11 @@ const Home = () => {
             <Searchbar />
         </Hidden>
         <Hero />
-        {/* top album */}
-        <Section sectionName="Top Albums" data={tAlbums} />
-
-        {/* new album */}
+        {/* <Section sectionName="Top Albums" data={tAlbums} />
         <Section sectionName="New Albums" data={nAlbums} />
-
-        {/* songs */}
-        <div style={{ backgroundColor: theme.palette.primary[400], height: '1px' }}><br /></div>
+        <GreenLine/>
         <Section sectionName="Songs" data={songs} isSongsSection={true} />
-        <div style={{ backgroundColor: theme.palette.primary[400], height: '1px' }}><br /></div>
+        <GreenLine/> */}
         {/* <FAQ /> */}
     </>
 }
