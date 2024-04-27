@@ -25,7 +25,7 @@ const SwiperComp = ({ data, isSongsSection }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={0}
+      spaceBetween={50}
       slidesPerView={7}
       navigation
       // pagination={{ clickable: true }}
