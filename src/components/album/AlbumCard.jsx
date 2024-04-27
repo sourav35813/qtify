@@ -22,8 +22,8 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
                     <>
                         <Box
                             sx={{
-                                width: '180px',
-                                height: '240px',
+                                width: '160px',
+                                height: '210px',
                                 backgroundColor: 'white',
                                 borderRadius: 2,
                                 display: 'flex',
@@ -45,7 +45,7 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
                                 <Chip size="small" label={count} sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
                             </Box>
                         </Box>
-                        <Typography variant="body2" sx={{ pt: '5px', pb: '10px' }}>
+                        <Typography variant="body2" sx={{ pt: '5px', pb: '10px', width: '160px' }}>
                             {data.title}
                         </Typography>
                     </>
@@ -61,8 +61,8 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
                     >
                         <Box
                             sx={{
-                                width: '180px',
-                                height: '240px',
+                                width: '160px',
+                                height: '210px',
                                 backgroundColor: 'white',
                                 borderRadius: 2,
                                 display: 'flex',
@@ -84,7 +84,7 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
                                 <Chip size="small" label={count} sx={{ color: 'white', ml: '10px', backgroundColor: theme.palette.customBlack.main, fontSize: '11px' }} />
                             </Box>
                         </Box>
-                        <Typography variant="body2" sx={{ pt: '5px', pb: '10px' }}>
+                        <Typography variant="body2" sx={{ pt: '5px', pb: '10px', width: '160px' }}>
                             {data.title}
                         </Typography>
                     </Tooltip>
@@ -93,5 +93,9 @@ const AlbumCard = ({ data, isSongsSection = false }) => {
     </>
 }
 
+
 export { AlbumCard };
+
+
+
 

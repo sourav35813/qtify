@@ -9,24 +9,29 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useMediaQuery } from '@mui/material';
 
 const SwiperComp = ({ data, isSongsSection }) => {
 
   //for context
   const { selectedGenre, setSelectedGenre } = useContext(GenreContext);
-
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const theme = useTheme();
   const swiperStyle = {
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    paddingLeft: isSmallScreen ? '0px' : '20px',
+    paddingRight: isSmallScreen ? '0px' : '20px',
     color: "white",
     paddingTop: "15px"
   };
+  const swiperSlideStyle = {
+    margin:'0',
+    maxWidth:'160px'
+  }
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={7}
+      slidesPerView={"auto"}
       navigation
       // pagination={{ clickable: true }}
       // scrollbar={{ draggable: true }}
@@ -39,13 +44,13 @@ const SwiperComp = ({ data, isSongsSection }) => {
           (data?.map((album) => {
             if (selectedGenre === "all") {
               return (
-                <SwiperSlide key={album.id}>
+                <SwiperSlide key={album.id} style={swiperSlideStyle}>
                   <AlbumCard data={album} isSongsSection={true} />
                 </SwiperSlide>
               )
             } else if (selectedGenre === album.genre.key) {
               return (
-                <SwiperSlide key={album.id}>
+                <SwiperSlide key={album.id} style={swiperSlideStyle}>
                   <AlbumCard data={album} isSongsSection={true} />
                 </SwiperSlide>
               )
@@ -54,7 +59,7 @@ const SwiperComp = ({ data, isSongsSection }) => {
           )) :
           (
             data?.map((album) =>
-              <SwiperSlide key={album.id}>
+              <SwiperSlide key={album.id} style={swiperSlideStyle}>
                 <AlbumCard data={album} />
               </SwiperSlide>
             )
