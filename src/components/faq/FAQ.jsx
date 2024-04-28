@@ -29,7 +29,7 @@ export const FAQ = () => {
     }, [])
 
     return <>
-        <Box color="white" sx={{ backgroundColor: theme.palette.customBlack.main }}>
+        <Box color="white" sx={{ backgroundColor: theme.palette.customBlack.main, marginBottom:'80px' }}>
             <Typography variant="h3" fontWeight="600" sx={{ pt: '20px', textAlign: 'center' }}>
                 FAQs
             </Typography>
