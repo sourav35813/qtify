@@ -9,6 +9,7 @@ import axios from "axios";
 import { Searchbar } from "../components/navbar/Searchbar";
 import { Hidden } from '@mui/material';
 import { GreenLine } from "../components/greenline/GreenLine";
+import { SongPlayer } from "../components/songplayer/SongPlayer";
 
 const Home = () => {
     const [tAlbums, setTAlbums] = useState();
@@ -63,6 +64,8 @@ const Home = () => {
         <Section sectionName="Songs" data={songs} isSongsSection={true} />
         <GreenLine/>
         <FAQ />
+        <div style={{ backgroundColor: "white", height: '1px' }}><br /></div>
+        <SongPlayer />
     </>
 }
 

@@ -33,7 +33,7 @@ export const FAQ = () => {
             <Typography variant="h3" fontWeight="600" sx={{ pt: '20px', textAlign: 'center' }}>
                 FAQs
             </Typography>
-            <div style={{ maxWidth: '1400px', marginLeft: "auto", marginRight: "auto", marginTop: "20px", marginBottom: "20px", paddingBottom: '50px', paddingLeft:'30px', paddingRight:'30px' }}>
+            <div style={{ maxWidth: '1400px', marginLeft: "auto", marginRight: "auto", marginTop: "20px", paddingBottom: '50px', paddingLeft:'30px', paddingRight:'30px' }}>
                 {
                     faqData?.map((data) =>
                         <CustomAccordion data={data} />
