@@ -4,8 +4,10 @@ import { useTheme } from "@emotion/react";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import { DateRange } from "@mui/icons-material";
+import {useNavigate} from "react-router-dom"
 
 export const CustomCard = ({ data, isSongsSection = false }) => {
+    const navigate = useNavigate();
     const theme = useTheme();
     let count;
     let title;
@@ -30,6 +32,7 @@ export const CustomCard = ({ data, isSongsSection = false }) => {
                                 flexDirection: 'column',
                                 justifyContent: 'space-between',
                                 overflow: 'hidden',
+                                cursor: 'pointer'
                             }}
                         >
                             <img
@@ -69,7 +72,9 @@ export const CustomCard = ({ data, isSongsSection = false }) => {
                                 flexDirection: 'column',
                                 justifyContent: 'space-between',
                                 overflow: 'hidden',
+                                cursor: 'pointer'
                             }}
+                            onClick={() => navigate(`/album/${data.id}`)}
                         >
                             <img
                                 src={data.image}

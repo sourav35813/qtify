@@ -51,21 +51,18 @@ const Home = () => {
     }, [])
     const theme = useTheme();
     return <>
-        <Navbar />
         <Hidden mdUp>
-            <Box sx={{ width:'100vw'}}>
+            <Box sx={{ width: '100vw' }}>
                 <Searchbar />
             </Box>
         </Hidden>
         <Hero />
         <Section sectionName="Top Albums" data={tAlbums} />
         <Section sectionName="New Albums" data={nAlbums} />
-        <GreenLine/>
+        <GreenLine />
         <Section sectionName="Songs" data={songs} isSongsSection={true} />
-        <GreenLine/>
+        <GreenLine />
         <FAQ />
-        <div style={{ backgroundColor: "white", height: '1px' }}><br /></div>
-        <NowPlaying />
     </>
 }
 
