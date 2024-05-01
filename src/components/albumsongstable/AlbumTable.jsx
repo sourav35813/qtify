@@ -8,19 +8,17 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useTheme } from "@emotion/react";
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function msToMinSec(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    const formattedSeconds = String(seconds).padStart(2, '0');
+    const formattedTime = `${formattedMinutes}:${formattedSeconds}`;
+    return formattedTime;
 }
 
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-export const AlbumTable = () => {
+export const AlbumTable = ({ data }) => {
     const theme = useTheme();
     return (
         <TableContainer component={Paper} sx={{ marginTop: "40px", marginBottom: '80px', backgroundColor: theme.palette.customBlack.main }}>
@@ -33,28 +31,28 @@ export const AlbumTable = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {data?.songs?.map((song) => (
                         <TableRow
-                            key={row.name}
+                            key={song.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                             <TableCell sx={{ color: 'white' }} component="th" scope="row">
-                                <div style={{ display: 'flex', alignItems: 'center'}}>
+                                <div style={{ display: 'flex', alignItems: 'center' }}>
                                     <div style={{ width: '60px', height: '60px', overflow: 'hidden', position: 'relative', borderRadius: '10px' }}>
                                         <img
-                                            src="https://images.pexels.com/photos/1509582/pexels-photo-1509582.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
-                                            alt="song"
-                                            // style={{ width: '100%', height: 'auto', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                                            src={song.image}
+                                            alt={song.title}
+                                            // song={{ width: '100%', height: 'auto', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
                                             style={{ width: '100%', height: 'auto' }}
                                         />
                                     </div>
-                                    <div style={{paddingLeft: "15px"}}>
-                                    {row.name}
+                                    <div style={{ paddingLeft: "15px" }}>
+                                        {song.title}
                                     </div>
                                 </div>
                             </TableCell>
-                            <TableCell sx={{ color: 'white' }}>{row.calories}</TableCell>
-                            <TableCell sx={{ color: 'white' }}>{row.fat}</TableCell>
+                            <TableCell sx={{ color: 'white' }}>{song.artists.join(", ")}</TableCell>
+                            <TableCell sx={{ color: 'white' }}>{msToMinSec(song.durationInMs)}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

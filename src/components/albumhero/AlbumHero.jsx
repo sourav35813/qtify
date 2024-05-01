@@ -59,7 +59,7 @@ export const AlbumHero = ({ data }) => {
                 2022
             </Typography> */}
             <Typography variant='subtitle1' sx={{ fontWeight: 500, paddingBottom: '8px' }}>
-                {data?.songs.length} Songs . {totalDurationFormatted} . {data?.follows} Follows
+                {data?.songs.length} Songs • {totalDurationFormatted} • {data?.follows} Follows
             </Typography>
             <Stack direction="row" spacing={2} sx={{ justifyContent: isSmallScreen && 'center' }}>
                 <Button variant="contained" startIcon={<ShuffleIcon />} sx={{ borderRadius: '8px', backgroundColor: theme.palette.primary[400], color: 'white' }}>
