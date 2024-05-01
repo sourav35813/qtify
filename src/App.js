@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom"
 import { Album } from "./pages/Album"
 import Navbar from './components/navbar/Navbar';
 import { NowPlaying } from './components/nowplaying/NowPlaying';
+import { CurrentSongContext } from './components/contexts/ContextForCurrentSong';
+import { useState } from 'react';
 
 // Define custom theme
 const theme = createTheme({
@@ -33,15 +35,15 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily:'"Poppins"',
-    body1:{
-      fontSize:'0.9rem',
+    fontFamily: '"Poppins"',
+    body1: {
+      fontSize: '0.9rem',
       '@media (min-width:800px)': {
         fontSize: '1rem'
       }
     },
-    caption:{
-      fontSize:'0.7rem',
+    caption: {
+      fontSize: '0.7rem',
       '@media (min-width:800px)': {
         fontSize: '0.8rem'
       }
@@ -50,15 +52,23 @@ const theme = createTheme({
 });
 
 function App() {
+  //for context
+  const [currentSong, setCurrentSong] = useState({
+    image: "https://images.pexels.com/photos/3464632/pexels-photo-3464632.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    songTitle: "Love Hangover",
+    albumTitle:"Motherly Highlight",
+  });
   return <>
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/album/:albumid" element={<Album />} />
-      </Routes>
-      <div style={{ backgroundColor: "white", height: '1px' }}><br /></div>
-      <NowPlaying />
+      <CurrentSongContext.Provider value={{currentSong, setCurrentSong}}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/album/:albumid" element={<Album />} />
+        </Routes>
+        <div style={{ backgroundColor: "white", height: '1px' }}><br /></div>
+        <NowPlaying />
+      </CurrentSongContext.Provider>
     </ThemeProvider>
   </>
 }
