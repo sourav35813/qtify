@@ -1,14 +1,10 @@
-import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/system/Box'
 import { InputBase } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
-import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Searchbar = () => {
-    const theme = useTheme();
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
     return <>
         <Box sx={{display:'flex', minWidth: isSmallScreen ? '100vw' : '568px', maxWidth: isSmallScreen ? '100vw' : '568px'}}>

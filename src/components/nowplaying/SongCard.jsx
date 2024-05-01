@@ -2,14 +2,18 @@ import { Typography } from "@mui/material"
 import Stack from "@mui/material/Stack"
 import Box from "@mui/material/Box"
 import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 export const SongCard = ({ data }) => {
     const theme = useTheme();
+    const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
     return <Box color="white" display={"flex"} justifyContent={"space-evenly"} alignItems={"center"} width={"200px"} padding={"16px"}>
             <div style={{ width: '60px', height: '60px', overflow: 'hidden', position: 'relative', borderRadius: '10px' }}>
                 <img
                     src="https://images.pexels.com/photos/1509582/pexels-photo-1509582.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
                     alt="song"
-                    style={{ width: '100%', height: 'auto', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                    // style={{ width: '100%', height: 'auto', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                    style={{ width: '100%', height: 'auto'}}
                 />
             </div>
             <Stack>

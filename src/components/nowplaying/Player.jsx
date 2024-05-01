@@ -24,7 +24,7 @@ export const Player = () => {
                     <LinearProgress variant="determinate" value={30} />
                 </div>
             </Hidden>
-            <Hidden mdDown>
+            <Hidden mdDown smDown>
                 <div style={{ width: '45vw', paddingLeft: '6px', paddingRight: '6px' }}>
                     <LinearProgress variant="determinate" value={30} />
                 </div>
