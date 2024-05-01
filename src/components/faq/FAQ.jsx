@@ -2,11 +2,6 @@ import { useTheme } from "@emotion/react";
 import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Icon } from '@mui/material';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {CustomAccordion} from "./CustomAccordion"

@@ -9,7 +9,6 @@ import axios from "axios";
 import { Searchbar } from "../components/navbar/Searchbar";
 import { Hidden } from '@mui/material';
 import { GreenLine } from "../components/greenline/GreenLine";
-import { NowPlaying } from "../components/nowplaying/NowPlaying";
 
 const Home = () => {
     const [tAlbums, setTAlbums] = useState();
