@@ -33,8 +33,19 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily:
-      '"Poppins"'
+    fontFamily:'"Poppins"',
+    body1:{
+      fontSize:'0.9rem',
+      '@media (min-width:800px)': {
+        fontSize: '1rem'
+      }
+    },
+    caption:{
+      fontSize:'0.7rem',
+      '@media (min-width:800px)': {
+        fontSize: '0.8rem'
+      }
+    }
   },
 });
 
