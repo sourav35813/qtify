@@ -3,7 +3,6 @@ import { Chip } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import { DateRange } from "@mui/icons-material";
 import {useNavigate} from "react-router-dom"
 
 export const CustomCard = ({ data, isSongsSection = false }) => {
@@ -74,7 +73,7 @@ export const CustomCard = ({ data, isSongsSection = false }) => {
                                 overflow: 'hidden',
                                 cursor: 'pointer'
                             }}
-                            onClick={() => navigate(`/album/${data.id}`)}
+                            onClick={() => navigate(`/album/${data.slug}`)}
                         >
                             <img
                                 src={data.image}

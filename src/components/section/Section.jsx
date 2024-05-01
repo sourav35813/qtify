@@ -40,7 +40,7 @@ const Section = ({ sectionName, data, isSongsSection = false }) => {
           </Typography>
           {
             !isSongsSection &&
-            <Typography onClick={handleClick} color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px' }}>
+            <Typography onClick={handleClick} color={theme.palette.primary[400]} variant="h6" sx={{ fontWeight: 600, pb: '15px', cursor: 'pointer' }}>
               {
                 showAll ? "Collapse" : "Show all"
               }
