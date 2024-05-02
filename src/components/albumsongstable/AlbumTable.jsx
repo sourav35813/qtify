@@ -9,6 +9,8 @@ import Paper from '@mui/material/Paper';
 import { useTheme } from "@emotion/react";
 import { CurrentSongContext } from '../contexts/ContextForCurrentSong';
 import { useContext } from 'react';
+import { Pagination } from '@mui/material';
+
 
 function msToMinSec(ms) {
     const totalSeconds = Math.floor(ms / 1000);
@@ -22,9 +24,15 @@ function msToMinSec(ms) {
 
 export const AlbumTable = ({ data }) => {
     const { currentSong, setCurrentSong } = useContext(CurrentSongContext);
+    const [currentPage, setCurrentPage] = React.useState();
+    const handlePageChange = (e) => {
+        setCurrentPage(e);
+        console.log("page: ", e);
+    }
     const theme = useTheme();
     return (
         <TableContainer component={Paper} sx={{ marginTop: "40px", marginBottom: '80px', backgroundColor: theme.palette.customBlack.main }}>
+            {/* <Pagination count={8} color="standard" sx={{backgroundColor:'white', color:'red'}} size="small" page={page} onClick={(e) => handlePageChange(e)}/> */}
             <Table sx={{ minWidth: 400 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
