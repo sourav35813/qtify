@@ -1,3 +1,19 @@
+import { ReactComponent as SearchIcon } from "../../assets/Search-icon.svg";
+import styles from "../../css/components/Search/Search.module.css";
+
+const Search = ({ search }) => {
+  return (
+    <form className={styles.wrapper}>
+      <input className={styles.search} placeholder={search}></input>
+      <button className={styles.searchButton} type="submit">
+        <SearchIcon />
+      </button>
+    </form>
+  );
+};
+
+export default Search;
+
 // import searchLogo from "../../assets/Search-icon.svg";
 // import styles from "../../css/components/Logo/Logo.module.css";
 
@@ -20,18 +36,3 @@
 // }
 
 // import React from "react";
-import { ReactComponent as SearchIcon } from "../../assets/Search-icon.svg";
-import styles from "../../css/components/Search/Search.module.css";
-
-const Search = ({ search }) => {
-  return (
-    <form className={styles.wrapper}>
-      <input className={styles.search} placeholder={search}></input>
-      <button className={styles.searchButton} type="submit">
-        <SearchIcon />
-      </button>
-    </form>
-  );
-};
-
-export default Search;
