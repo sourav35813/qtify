@@ -11,8 +11,8 @@ import styles from "../../css/components/Logo/Logo.module.css";
 export default function Logo() {
   return (
     // <div id="logodiv">
-    <div className={styles.logo}>
-      <img src={LogoImage} alt="logo" width={67} />
+    <div className={styles.logodiv}>
+      <img src={LogoImage} alt="logo" />
     </div>
   );
 }
