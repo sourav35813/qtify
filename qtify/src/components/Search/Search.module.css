@@ -5,14 +5,14 @@
   height: 48px;
 }
 .search {
-  width: 300px;
+  width: 468px;
   height: 48px;
   top: 13px;
   left: 938px;
   gap: 0px;
   border-radius: 8px 0px 0px 8px;
   border: 1px 0px 0px 0px;
-  /* opacity: 0px; */
+  opacity: 0px;
   padding-left: 15px;
 }
 .searchButton {
@@ -24,5 +24,5 @@
   gap: 0px;
   border-radius: 0px 8px 8px 0px;
   border: 1px 0px 0px 0px;
-  /* opacity: 0px; */
+  opacity: 0px;
 }
