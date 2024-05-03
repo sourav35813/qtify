@@ -31,7 +31,7 @@ svg {
   display: block;
   /* align-items: center; */
   max-width: 100%;
-  /* margin: 5px; */
+  margin: 5px;
 }
 
 .swiper-slide {
